@@ -1,0 +1,347 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+
+body {
+  background-color: #ffffff;
+  background: #131313; /* Updated background color */
+  font-family: "Raleway", Arial, sans-serif; /* Use Raleway font */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Animations - unchanged */
+
+.player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden; /* Hide overflowing content */
+}
+
+.details {
+  text-align: center;
+  margin-bottom: 20px;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.track-art {
+  height: 250px;
+  width: 250px;
+  background-image: url("https://images.pexels.com/photos/262034/pexels-photo-262034.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+  background-size: cover;
+  border-radius: 50%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  transform: translateZ(0); /* Add 3D effect */
+  animation: scaleIn 0.8s ease forwards;
+  border: 2px solid #333;
+  outline: 2px solid #0b3256; /* Updated outline color */
+}
+
+.track-name {
+  font-size: 2rem;
+  margin-top: 10px;
+  color: #ffd21f; /* Updated text color */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Add text shadow */
+  animation: fadeInLeft 0.8s ease forwards;
+  outline: 2px solid #555; /* Add outline */
+  font-weight: bold; /* Make the text bold */
+}
+
+.track-artist {
+  font-size: 1.5rem;
+  color: #8eb8e5; /* Updated text color */
+  animation: fadeInRight 0.8s ease forwards;
+  outline: 2px solid #555; /* Add outline */
+  font-weight: bold; /* Make the text bold */
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  animation: fadeInDown 0.8s ease forwards;
+}
+
+.buttons .fa {
+  font-size: 2rem;
+  margin: 0 15px;
+  color: #b0b3b8; /* Updated button color */
+  cursor: pointer;
+  transition: color 0.3s ease;
+  animation: pulse 1.5s infinite alternate;
+  outline: 2px solid #555; /* Add outline */
+  background-image: linear-gradient(to right, #555, #333); /* Add gradient */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold; /* Make the text bold */
+}
+
+.buttons .fa:hover {
+  color: #000;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Add text shadow on hover */
+}
+
+.slider_container {
+  width: 75%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.current-time,
+.total-duration {
+  font-size: 0.9rem;
+  color: #d1d5db; /* Updated text color */
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.volume_slider,
+.seek_slider {
+  width: 100%;
+  margin: 10px 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: #555;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add thumb shadow */
+  animation: pulse 1.5s infinite alternate;
+}
+
+::-webkit-slider-thumb:hover {
+  background-color: #000;
+}
+
+/* Additional animations */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.now-playing {
+  color: #ffffff; /* Set the text color to white */
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* Rest of your CSS styles remain unchanged */
+
+.player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden; /* Hide overflowing content */
+}
+
+.details {
+  text-align: center;
+  margin-bottom: 20px;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.track-art {
+  height: 250px;
+  width: 250px;
+  background-image: url("https://images.pexels.com/photos/262034/pexels-photo-262034.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+  background-size: cover;
+  border-radius: 50%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  transform: translateZ(0); /* Add 3D effect */
+  animation: scaleIn 0.8s ease forwards;
+  border: 2px solid #333;
+  outline: 2px solid #555; /* Add outline */
+}
+
+.track-name {
+  font-size: 2rem;
+  margin-top: 10px;
+  color: #ffd21f; /* Updated text color */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Add text shadow */
+  animation: fadeInLeft 0.8s ease forwards;
+  outline: 2px solid #555; /* Add outline */
+  font-weight: bold; /* Make the text bold */
+}
+
+.track-artist {
+  font-size: 1.5rem;
+  color: #8eb8e5; /* Updated text color */
+  animation: fadeInRight 0.8s ease forwards;
+  outline: 2px solid #555; /* Add outline */
+  font-weight: bold; /* Make the text bold */
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  animation: fadeInDown 0.8s ease forwards;
+}
+
+.buttons .fa {
+  font-size: 2rem;
+  margin: 0 15px;
+  color: #ffffff; /* Updated text color */
+  cursor: pointer;
+  transition: color 0.3s ease;
+  animation: pulse 1.5s infinite alternate;
+  outline: 2px solid #555; /* Add outline */
+  background-image: linear-gradient(to right, #555, #333); /* Add gradient */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold; /* Make the text bold */
+}
+
+.buttons .fa:hover {
+  color: #000;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Add text shadow on hover */
+}
+
+.slider_container {
+  width: 75%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.current-time,
+.total-duration {
+  font-size: 0.9rem;
+  color: #d1d5db; /* Updated text color */
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.volume_slider,
+.seek_slider {
+  width: 100%;
+  margin: 10px 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: #555;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add thumb shadow */
+  animation: pulse 1.5s infinite alternate;
+}
+
+::-webkit-slider-thumb:hover {
+  background-color: #000;
+}
